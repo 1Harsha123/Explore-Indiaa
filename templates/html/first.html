@@ -1,0 +1,698 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore India</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/first.css' %}" />
+
+</head>
+
+
+
+<body>
+
+    <header>
+        <!-- <div id="menu-bar" class="fas fa-bars"></div> -->
+
+        <a href="#" class="logo"><span>E</span>xplore India</a>
+
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#book">Book</a>
+            <a href="#packages">Packages</a>
+            <a href="#services">Services</a>
+            <a href="#review">Review</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="icons">
+            <i class="fas fa-search" id="search-btn"></i>
+            <i class="fas fa-user" id="login-btn"></i>
+        </div>
+
+        <form action="" class="search-bar-container">
+            <input type="search" id="search-bar" placeholder="search here...">
+
+            <label for="search-bar" class="fas fa-search"></label>
+
+
+        </form>
+    </header>
+
+
+
+    <div class="login-form-cont">
+        <i class="fas fa-times" id="form-close"></i>
+
+        <form method="post" action="">
+            {% csrf_token %}
+            <h3>Login</h3>
+            <input type="email" name="email" class="box" placeholder="Enter your email">
+            <input type="password" name="password" class="box" placeholder="Enter your password">
+            <input type="submit" value="Login now" class="btn">
+            <label for="remember">Remember me</label>
+            <p>Forget password? <a href="#">Click here</a></p>
+            <p>Don't have an account? <a href="#">Register now</a></p>
+        </form>
+
+    </div>
+    <section class="home" id="home">
+
+        <div class="content">
+            <h3>India Awaits Your Discovery,
+                Feel India's Heartbeat
+            </h3>
+            <p>Discover new places with us, Adventure awaits</p>
+            <a href="#" class="btn">Discover more</a>
+
+        </div>
+        <div class="controls">
+            <span class="vid-btn active" data-src="{% static 'images/production_id_4047487 (1080p).mp4' %}"></span>
+            <span class="vid-btn" data-src="{% static 'images/ss.mp4' %}"></span>
+            <span class="vid-btn" data-src="{% static 'images/pexels_videos_1093662 (1080p).mp4' %}"></span>
+            <span class="vid-btn" data-src="{% static 'images/production_id_4193130 (1440p).mp4' %}"></span>
+            <span class="vid-btn" data-src="{% static 'images/video (2160p).mp4' %}"></span>
+
+
+        </div>
+        <div class="video-cont">
+            <video src="{% static 'images/production_id_4047487 (1080p).mp4' %}" id="video-slider" loop autoplay
+                muted></video>
+
+        </div>
+
+
+    </section>
+
+    <section class="book" id="book">
+        <h1 class="heading">
+            <span>b</span>
+            <span>o</span>
+            <span>o</span>
+            <span>k</span>
+            <span class="space"></span>
+            <span>n</span>
+            <span>o</span>
+            <span>w</span>
+        </h1>
+
+        <div class="row">
+            <div class="image">
+                <img src="{% static 'images/th3.jpeg' %}" />
+
+            </div>
+            <form action="/book/" method="post">
+                {% csrf_token %}
+                <div class=" inputbox">
+                    <h3>Where to</h3>
+                    <input type="text" name="name" placeholder="place name">
+                </div>
+
+                <div class="inputbox">
+                    <h3>How many</h3>
+                    <input type="number" name="place_number" placeholder="number of guests">
+                </div>
+
+                <div class="inputbox">
+                    <h3>Arrivals</h3>
+                    <input type="date" name="arrival_date">
+                </div>
+
+                <div class="inputbox">
+                    <h3>leaving</h3>
+                    <input type="date" name="leaving_date">
+                </div>
+                <input type="submit" class="btn" value="Book now" />
+            </form>
+
+
+        </div>
+
+    </section>
+
+    <section class="packages" id="packages">
+        <h1 class="heading">
+            <span>p</span>
+            <span>A</span>
+            <span>c</span>
+            <span>k</span>
+            <span>A</span>
+            <span>G</span>
+            <span>E</span>
+            <span>S</span>
+
+        </h1>
+
+        <div class="box-cont">
+
+            <div class="box">
+                <img src="{% static 'images/pexels-kolkatar-chobiwala-19109585.jpg' %}" height="40%" width="40%">
+
+
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i>Kolkata</h3>
+                    <p>Explore Kolkata's vibrant tapestry of heritage at the Victoria Memorial.</p>
+
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+
+                    <div class="price">$90.00 <span>$120.00</span></div>
+                    <a href="#" class="btn">book now</a>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="box">
+                <img src="{% static 'images\pexels-frozenmomentii-13943611.jpg' %}" height="40%" width="40%">
+
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i>India Gate</h3>
+                    <p>India Gate stands tall as a poignant symbol of sacrifice.</p>
+
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+
+                    </div>
+                    <div class="price">$90.00 <span>$520.00</span></div>
+                    <a href="#" class="btn">book now</a>
+                </div>
+            </div>
+
+
+
+
+            <div class="box">
+
+                <img src="{%  static 'images/pexels-thanh-maixuan-13701731.jpg' %}" height="40%" width="40%">
+
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i>Lotus temple</h3>
+                    <p>The Lotus Temple in Delhi captivates with its serene beauty, offering solace</p>
+
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+
+                    </div>
+                    <div class="price">$100.00 <span>$180.00</span></div>
+                    <a href="#" class="btn">book now</a>
+                </div>
+            </div>
+
+
+
+
+            <div class="box">
+                <img src="{% static 'images/pexels-nav-photography-5458388.jpg' %}" height="40%" width="40%">
+
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i>Amritsar</h3>
+                    <p>This temple the land of ancient wonders.This is very beautiful place.</p>
+
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+
+                    </div>
+                    <div class="price">$900.00 <span>$120.00</span></div>
+                    <a href="#" class="btn">book now</a>
+                </div>
+            </div>
+
+
+
+            <div class="box place" id="tajMahal">
+                <img src="{% static 'images\pexels-sudipta-mondal-1603650.jpg' %}" height="40%" width="40%">
+
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i>Taj Mahal</h3>
+                    <p>The Taj Mahal: A sublime symphony of love etched in marble against the backdrop.</p>
+
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="price">$500.00 <span>$90.00</span></div>
+                    <a href="#" class="btn">book now</a>
+                </div>
+            </div>
+
+
+            <div class="box">
+                <img src="{% static 'images/pexels-ankur-bagai-6440428.jpg' %}" height="40%" width="40%">
+
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i>Hawa Mahal</h3>
+                    <p>The Hawa Mahal: A sublime symphony of love etched in marble against the backdrop.</p>
+
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+
+                    </div>
+                    <div class="price">$100.00 <span>$20.00</span></div>
+                    <a href="#" class="btn">book now</a>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+    </section>
+
+    <section class="services" id="services">
+        <h1 class="heading">
+            <span>s</span>
+            <span>e</span>
+            <span>r</span>
+            <span>v</span>
+            <span>i</span>
+            <span>c</span>
+            <span>e</span>
+            <span>s</span>
+        </h1>
+        <div class="box-cont">
+            <div class="box">
+                <i class="fas fa-hotel"></i>
+                <h3>Affordable Hotel</h3>
+                <p>hotels offer a cozy haven for travelers seeking comfort without breaking the bank. These
+                    budget-friendly inviting guests to immerse themselves in the authentic essence of their destination.
+                </p>
+
+            </div>
+
+            <div class="box">
+                <i class="fas fa-utensils"></i>
+                <h3>Food and drinks</h3>
+                <p> Food and drinks serve as gateways to the heart and soul of any culture, offering a tantalizing
+                    journey through flavors, traditions, and stories destination.
+                </p>
+
+            </div>
+
+
+
+
+            <div class="box">
+                <i class="fas fa-bullhorn"></i>
+                <h3>adventures</h3>
+                <p>hotels offer a cozy haven for travelers seeking comfort without breaking the bank. These
+                    budget-friendly
+                    accommodations provide more than just a place to rest; they often embody local charm and
+                    hospitality,
+                    inviting guests to immerse themselves in the authentic essence of their destination. </p>
+
+            </div>
+
+            <div class="box">
+                <i class="fas fa-globe-asia"></i>
+                <h3>Around the world</h3>
+                <p> Around the world, a vast tapestry of cultures, landscapes, and experiences awaits the adventurous
+                    soul.to immerse themselves in the authentic essence of their destination. </p>
+
+            </div>
+            <div class="box">
+                <i class="fas fa-plane"></i>
+                <h3>Fastest Travel</h3>
+                <p>Fast travel has revolutionized the way we explore the world, offering unprecedented convenience and
+                    efficiency for modern adventurers
+                    inviting guests to immerse themselves in the authentic essence of their destination. </p>
+
+            </div>
+
+            <div class="box">
+                <i class="fas fa-hiking"></i>
+                <h3>safety guide</h3>
+                <p> Prioritizing safety while traveling is paramount for a smooth and enjoyable journey. Always research
+                    the destination beforehand, familiarizing yourself with local customs, laws, and potential risks
+                    destination. </p>
+
+
+            </div>
+        </div>
+
+
+    </section>
+
+
+    <section class="gallery" id="gallery">
+        <h1 class="heading">
+
+            <span>g</span>
+            <span>a</span>
+            <span>l</span>
+            <span>l</span>
+            <span>e</span>
+            <span>r</span>
+            <span>y</span>
+        </h1>
+        <div class="box-cont">
+
+            <div class="box">
+                <img src="{% static 'images\pexels-jan-krnc-1043458.jpg' %}" width="100%" height="100%">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Step into a world of mesmerizing visuals at the gallery, where each frame narrates a tale of
+                        breathtaking beauty and unspoken emotions</p>
+
+                    <a href="#" class="btn">see more</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src=" {% static 'images/pexels-pixabay-326055.jpg' %}" width="100%" height="100%">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Step into a world of mesmerizing visuals at the gallery, where each frame narrates a tale of
+                        breathtaking beauty and unspoken emotions</p>
+                    <a href="#" class="btn">see more</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="{% static 'images/pexels-eberhard-grossgasteiger-673020.jpg' %}" width="100%" height="100%">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Step into a world of mesmerizing visuals at the gallery, where each frame narrates a tale of
+                        breathtaking beauty and unspoken emotions</p>
+                    <a href="#" class="btn">see more</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src=" {% static 'images/pexels-pixabay-210243.jpg' %}" width="100%" height="100%">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Step into a world of mesmerizing visuals at the gallery, where each frame narrates a tale of
+                        breathtaking beauty and unspoken emotions</p>
+                    <a href="#" class="btn">see more</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src=" {% static 'images/tourist-sitting-phu-sub-lek-viewpoint-sunset-lopburi-thailand.jpg' %}"
+                    width="100%" height="100%">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Step into a world of mesmerizing visuals at the gallery, where each frame narrates a tale of
+                        breathtaking beauty and unspoken emotions</p>
+                    <a href="#" class="btn">see more</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src=" {% static 'images/pexels-pixabay-33545.jpg' %}" width="100%" height="100%">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Step into a world of mesmerizing visuals at the gallery, where each frame narrates a tale of
+                        breathtaking beauty and unspoken emotions</p>
+                    <a href="#" class="btn">see more</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src=" {% static 'images/pexels-jan-krnc-1043458.jpg' %}" width="100%" height="100%">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Step into a world of mesmerizing visuals at the gallery, where each frame narrates a tale of
+                        breathtaking beauty and unspoken emotions</p>
+                    <a href="#" class="btn">see more</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="{% static 'images/pexels-pixabay-459203.jpg' %}" width="100%" height="100%">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Step into a world of mesmerizing visuals at the gallery, where each frame narrates a tale of
+                        breathtaking beauty and unspoken emotions</p>
+                    <a href="#" class="btn">see more</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src=" {% static 'images/pexels-nav-photography-5458388.jpg' %}" width="100%" height="100%">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Step into a world of mesmerizing visuals at the gallery, where each frame narrates a tale of
+                        breathtaking beauty and unspoken emotions</p>
+                    <a href="#" class="btn">see more</a>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </section>
+
+
+    <section class="review" id="review">
+        <h1 class="heading">
+
+            <span>r</span>
+            <span>e</span>
+            <span>v</span>
+            <span>i</span>
+            <span>e</span>
+            <span>w</span>
+        </h1>
+
+        <div class="swiper-container review-slider">
+
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="{% static 'images/pexels-janko-ferlic-1493111.jpg' %} " height="25%" width="25%">
+                        <h3>john deo</h3>
+                        <p>John Doe provided exceptional service during my recent visit to his establishment. From the
+                            moment I walked in, I was greeted with warmth and professionalism. John took the
+                            my preferences.</p>
+
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="{% static 'images/pexels-jeffrey-reed-769772.jpg' %}" height="25%" width="25%">
+                        <h3>jiijk goo</h3>
+                        <p>I had the pleasure of experiencing Jane Smith's exceptional service, and I must say, it was
+                            nothing short of outstanding. From the moment I engaged with Jane, her expertise and
+                            passion.</p>
+
+
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class=" swiper-slide">
+                    <div class="box">
+                        <img src="{% static 'images/pexels-italo-melo-2379005.jpg' %}" height="25%" width="25%">
+                        <h3>doly hooo</h3>
+                        <p>David Johnson's professionalism and expertise made my recent interaction with his business a
+                            delight. From start to finish, David's was evident. He took the time.</p>
+
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide ">
+                    <div class="box">
+                        <img src=" {% static 'images/pexels-mihaela-roxana-mărculescu-1816013.jpg' %}" height="25%"
+                            width="25%">
+                        <h3>johiin jo</h3>
+                        <p> I recently had the pleasure of working with Sarah Adams, and I must say, it was a truly
+                            remarkable experience. Sarah's professionalism and dedication to her craft were evident from
+                            the moment.</p>
+
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <section class="contact" id="contact">
+        <h1 class="heading">
+            <span>c</span>
+            <span>o</span>
+            <span>n</span>
+            <span>t</span>
+            <span>a</span>
+            <span>c</span>
+            <span>t</span>
+        </h1>
+
+        <div class="row">
+
+            <div class="image">
+                <img src=" {% static 'images/th (2).jpeg' %} ">
+            </div>
+
+            <form action="">
+                <div class="inputbox">
+                    <input type="text" placeholder="name">
+                    <input type="text" placeholder="email">
+                </div>
+
+                <div class="inputbox">
+                    <input type="number" placeholder="number">
+                    <input type="text" placeholder="subject">
+                </div>
+
+                <textarea placeholder="message" name="" id="" cols="30" rows="10"></textarea>
+                <input type="submit" class="btn" value="send message">
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <section class="brand">
+        <div class="swiper-conatiner brand-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"> <img src="{% static 'images/MASTERCARD-1-768x576.png.webp' %}" width="30%"
+                        height="40%">
+                </div>cl
+                <div class="swiper-slide"> <img src="{% static 'images/apple-768x432.png.webp' %}" width="30%"
+                        height="40%">
+                </div>
+                <div class="swiper-slide"> <img src="{% static 'images/Razer-Logo-600x400.png.webp' %}" width="30%"
+                        height="40%">
+                </div>
+                <div class="swiper-slide"> <img src="{% static 'images/Target-Logo-600x400.png.webp' %}" width="30%"
+                        height="40%">
+                </div>
+                <div class="swiper-slide"> <img src="{% static 'images/Societe-Generale-Logo-600x400.png.webp' %}"
+                        width="30%" height="40%">
+                </div>
+                <div class="swiper-slide"> <img src="{% static 'images/Walmart-Logo-600x400.png.webp' %}" width="40%"
+                        height="30%">
+                </div>
+                <div class="swiper-slide"> <img src="{% static 'images\Visa-Logo-600x400.png.webp' %}" width="40%"
+                        height="30%">
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <div class="box-cont">
+            <div class="box">
+                <h3>about us</h3>
+                <p>Discover the essence of who we are—a diverse mosaic of individuals united by our shared humanity,
+                    aspirations, and collective journey towards understanding, empathy, and progress for EXPLORE INDIA.
+                </p>
+
+
+            </div>
+
+            <div class="box">
+                <h3>branch loaction</h3>
+                <a href="#">India</a>
+                <a href="#">usa</a>
+                <a href="#">UK</a>
+                <a href="#">japan</a>
+                <a href="#">nepal</a>
+            </div>
+
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="#home">Home</a>
+                <a href="#book">Book</a>
+                <a href="#packages">Packages</a>
+                <a href="#services">Services</a>
+                <a href="#review">Review</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <div class="box">
+                <h3>our partners</h3>
+                <a href="https://www.facebook.com/">facebook</a>
+                <a href="https://www.instagram.com">instagram</a>
+                <a href="https://www.linkedin.com">linkedin</a>
+                <a href="https://www.twitter.com">twitter</a>
+            </div>
+
+            <h1 class="credit">created by<span> Harsha Gupta </span> | all rights reserved!</h1>
+
+
+
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="{% static 'js/first.js' %}"></script>
+
+
+</body>
+
+</html>
